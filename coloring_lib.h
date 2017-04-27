@@ -109,3 +109,23 @@ bool check_matrix(vector<vector<bool>>& matrix){
     }
     return true;
 }
+
+bool check_answer(vector<size_t>& ans, vector<vector<bool>> matrix){
+    for(size_t j = 0; j < matrix[0].size(); j++){
+        bool flag = false;
+        for(size_t i = 0; i < ans.size(); i++){
+            if(matrix[ans[i]][j]){
+                flag = true;
+
+                //cout << ans[i] << endl;
+
+                break;
+            }
+        }
+        if(!flag)
+            return false;
+    }
+    return true;
+}
+
+

@@ -105,11 +105,11 @@ vector<size_t> get_randomized_set(const vector<vector<bool>> &vectors, double p)
                 cout << "Go improvize!" << endl;
                 auto ri = rand() % vectors.size();
                 cout << "index: " << ri;
-                while(used[ri]) ri = rand() % len;
+                while(used[ri]) ri = rand() % vectors.size();
                 maxit = ri;
             }
-            catch(...){
-
+            catch(const std::bad_alloc&){
+                cout << "Bad alloc!" << endl;
             }
         }
         auto mix = vectors[maxit];

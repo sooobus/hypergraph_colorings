@@ -17,9 +17,10 @@ int main(){
     //}
     if(check_matrix(matrix)){
         auto ans = get_randomized_set(matrix, p);
-        cout << ans.size() << endl;
-        for(size_t i = 0; i < ans.size(); i++)
-                cout << ans[i] << endl;
+        cout << "New eval: " << ans.size() << endl;
+        //for(size_t i = 0; i < ans.size(); i++)
+        //        cout << ans[i] << endl;
+        cout << check_answer(ans, matrix) << endl;
     }
     else
         cout << "Can't get set" << endl;
